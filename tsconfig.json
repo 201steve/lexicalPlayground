@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", // 컴파일된 JavaScript 버전을 ES2020으로 설정합니다.
+    "useDefineForClassFields": true, // 클래스 필드를 정의할 때 'define' 세맨틱을 사용합니다.
+    "lib": ["ES2020", "DOM", "DOM.Iterable"], // 컴파일러가 포함할 타입 선언 라이브러리를 지정합니다.
+    "module": "ESNext", // 사용할 JavaScript 모듈 시스템을 설정합니다. ESNext 최신 모듈 기능을 사용합니다.
+    "skipLibCheck": true, // 선언 파일(`*.d.ts`)의 타입 체크를 건너뜁니다.
+    "esModuleInterop": true, // CommonJS 모듈을 default import 할 수 있게 해줍니다.
+    "allowSyntheticDefaultImports": true, // 실제로는 default export 없는 모듈을 default import 가능합니다.
+    "sourceMap": true, // 소스 맵을 생성하여, 디버깅 시 TypeScript 소스 파일을 참조할 수 있게 합니다.
+    "declaration": true, //컴파일시 .d.ts 파일도 자동으로 함께생성 (현재쓰는 모든 타입이 정의된 파일)
+
+    /* Bundler mode */
+    "moduleResolution": "node", // 모듈 해석 방식을 번들러에 맞춥니다.
+    "allowImportingTsExtensions": true, // '.ts' 확장자를 가진 모듈을 import할 수 있게 해줍니다.
+    "resolveJsonModule": true, // JSON 모듈의 임포트를 허용합니다.
+    "isolatedModules": true, // 각 파일을 독립적인 모듈로 변환합니다.
+    "noEmit": true, // 컴파일 결과로 JavaScript 파일을 출력하지 않습니다.
+    "jsx": "react-jsx", // JSX 코드를 'react-jsx' 형식으로 변환합니다.
+
+    /* Linting */
+    "strict": true, // 모든 엄격한 타입 체킹 옵션을 활성화합니다.
+    "noUnusedLocals": true, // 사용하지 않는 지역 변수가 있을 경우 에러를 발생시킵니다.
+    "noUnusedParameters": true, // 사용하지 않는 매개변수가 있을 경우 에러를 발생시킵니다.
+    "noFallthroughCasesInSwitch": true, // switch 문에서 case를 통과하는 것을 허용하지 않습니다.
+    "noImplicitReturns": true, //함수에서 return 빼먹으면 에러내기
+
+    /* Additional Checks */
+    "strictNullChecks": true, // null, undefined 타입에 이상한 짓 할시 에러내기
+    "strictFunctionTypes": true, // 함수파라미터 타입체크 강하게
+    "strictPropertyInitialization": true, // 클래스 속성의 초기화를 엄격하게 검사합니다.
+    "noImplicitAny": true, // 암시적 'any' 타입 사용을 금지합니다.
+    "noImplicitThis": true, // 'this' 표현식의 암시적 'any' 타입 사용을 금지합니다.
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"],
+      "@pages/*": ["pages/*"],
+      "@components/*": ["components/*"]
+    }
+  },
+  "include": ["src"], // 컴파일러가 처리할 파일들의 목록을 'src' 폴더로 한정합니다.
+  "references": [{ "path": "./tsconfig.node.json" }] // 다른 tsconfig 파일을 참조할 수 있게 합니다. 이 경우, 노드 환경을 위한 설정 파일을 참조합니다.
+}

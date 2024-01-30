@@ -1,0 +1,77 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-styled-components"
+  ],
+  "plugins": ["stylelint-order"],
+  "processors": ["stylelint-processor-styled-components"],
+  "customSyntax": "postcss-styled-syntax",
+  "rules": {
+    "no-missing-end-of-source-newline": true,
+    "order/order": ["custom-properties", "declarations"],
+    "order/properties-order": [
+      {
+        "groupName": "Layout",
+        "noEmptyLineBetween": false,
+        "properties": [
+          "display",
+          "visibility",
+          "overflow",
+          "float",
+          "clear",
+          "position",
+          "top",
+          "right",
+          "bottom",
+          "left",
+          "z-index"
+        ]
+      },
+      {
+        "groupName": "Box",
+        "noEmptyLineBetween": false,
+        "properties": [
+          "width",
+          "height",
+          "margin",
+          "margin-top",
+          "margin-right",
+          "margin-bottom",
+          "margin-left",
+          "padding",
+          "padding-top",
+          "padding-right",
+          "padding-bottom",
+          "padding-left",
+          "border"
+        ]
+      },
+      {
+        "groupName": "Background",
+        "noEmptyLineBetween": false,
+        "properties": ["background-color"]
+      },
+      {
+        "groupName": "Font",
+        "noEmptyLineBetween": false,
+        "properties": [
+          "color",
+          "font-style",
+          "font-weight",
+          "font-size",
+          "line-height",
+          "letter-spacing",
+          "text-align",
+          "text-indent",
+          "vertical-align",
+          "white-space"
+        ]
+      },
+      {
+        "groupName": "Animation",
+        "noEmptyLineBetween": false,
+        "properties": ["animation"]
+      }
+    ]
+  }
+}
